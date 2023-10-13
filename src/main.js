@@ -5,6 +5,8 @@ import routes from './routes'
 // eslint-disable-next-line no-unused-vars
 import axios from 'axios';
 import App from './App.vue'
+
+import '@/assets/css/styles.css'
 import './main.scss'; // Import global SCSS file
 
 Vue.config.productionTip = false

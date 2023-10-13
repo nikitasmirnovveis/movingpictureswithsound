@@ -1,22 +1,35 @@
+
 <template>
-  <div class='Home'>
-    <h1> {{ text }} </h1>
-    <!-- <h1> css  </h1> -->
-
-
+  <div class="container ">
+    <div class="mx-auto flex justify-between border-b ">
+      <Navbar/>
+      <Searchbar/>
+    </div>
+    
+    <PopularMovies/>
   </div>
 </template>
 
 <script>
- export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: 'Home',
-  data() {
-    return {
-      text: 'Home'
-    }
-  } 
-}
+/* eslint-disable */
+
+import Navbar from "./header/Navbar.vue"
+import Searchbar from "./header/Searchbar.vue"
+import PopularMovies from "./PopularMovies.vue"
+  export default {
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'Home',
+    components:{
+      Navbar,
+      Searchbar,
+      PopularMovies,
+    },
+    data() {
+      return {
+        
+      }
+    } 
+  }
 
 
 </script>

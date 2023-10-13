@@ -1,23 +1,23 @@
 <template>
     <div class='card'>
       <h1> {{ movie_title }} </h1>
-      <!-- <h1> {{ popFilms }} </h1> -->
-      <!-- <p v-bind:key="results in popFilms"></p> -->
-      <!-- <p>{{ popFilms.results }}</p> -->
+      <!-- <h1> {{ popular }} </h1> -->
+      <!-- <p v-bind:key="results in popular"></p> -->
+      <!-- <p>{{ popular.results }}</p> -->
       
       <div id="CardItem"></div>
     </div>
   </template>
   
 <script>
-  // var popFilms;
+  // var popular;
 import axios from 'axios';
   export default {
   name: 'CardItem',
   data() {
     return {
       movie_title: 'theMovie',
-      popFilms: null,
+      popular: null,
 
     }
   },
@@ -37,8 +37,8 @@ import axios from 'axios';
       .request(options)
       .then((response) => {
         console.log(response.data);
-        this.popFilms=response.data;
-        // console.log(this.popFilms);
+        this.popular=response.data;
+        // console.log(this.popular);
 
       })
       .catch((error) => {
@@ -56,14 +56,14 @@ import axios from 'axios';
 //     fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
 //       .then(response => response.json())
 //       .then(data => {
-//         // this.popFilms=data;
+//         // this.popular=data;
 //         console.log(data);
 
 //         // Now you can create and manipulate DOM elements
 //         const cardItem = document.getElementById('CardItem');
 //         const divElement = document.createElement('div');
 //         cardItem.appendChild(divElement);
-//         // divElement.textContent=popFilms.results[0].original_title;
+//         // divElement.textContent=popular.results[0].original_title;
 //       })
 //       .catch(err => console.error(err));
     },
