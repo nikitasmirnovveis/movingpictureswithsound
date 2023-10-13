@@ -5,24 +5,55 @@
   
 
     <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 ">
-      <MovieItem/>
-      <MovieItem/>
-      <MovieItem/>
-      <MovieItem/>
-      <MovieItem/>
+      <MovieItem :key='movie.id' v-for="movie in movieList" :movie="movie"/>
+      
     </div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-import MovieItem from "./items/MovieItem.vue"
+import axios from 'axios';
 
-  export default{
-    components:{
-      MovieItem,
+import MovieItem from "./items/MovieItem.vue"
+import optionsPopular from "C:/Users/nsa36/Documents/code/web/movingpictureswithsound/src/services/api.js"
+
+export default{
+  data() {
+    return {
+      movieList: null,
+
     }
-  }
+  },
+  components:{
+    MovieItem,
+  },
+  async mounted() {
+    // const response = await this.$http.get("/movie/popular");
+    // console.log(response);
+    
+    const optionsPopular = {
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/popular',
+      params: {language: 'en-US', page: '1'},
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDFmNWVkZDAzNDUzNjE0ODIwMWVjOWQzZjYzNWFjZiIsInN1YiI6IjY1MjNkNTVlMDcyMTY2NDViOTE5OWQ4YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3qrKa3EHaGcZMPktXd0bRvJ3A17uNRkjbABqHzg4Z0I'
+      }
+    };
+    axios
+      .request(optionsPopular)
+      .then((response) => {
+        console.log(response.data.results);
+        this.movieList=response.data.results;
+        // console.log(this.popular);
+
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  },
+}
 </script>
 
 <style></style>

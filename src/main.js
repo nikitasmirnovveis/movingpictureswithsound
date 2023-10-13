@@ -1,14 +1,14 @@
+/* eslint-disable */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// eslint-disable-next-line no-unused-vars
 import routes from './routes'
-// eslint-disable-next-line no-unused-vars
-import axios from 'axios';
+import api from './services/api.js';
 import App from './App.vue'
 
 import '@/assets/css/styles.css'
 import './main.scss'; // Import global SCSS file
 
+Vue.prototype.$http = api;
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
