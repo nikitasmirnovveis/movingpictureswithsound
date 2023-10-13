@@ -16,7 +16,7 @@
 import axios from 'axios';
 
 import MovieItem from "./items/MovieItem.vue"
-import optionsPopular from "C:/Users/nsa36/Documents/code/web/movingpictureswithsound/src/services/api.js"
+// import optionsPopular from "/services/api.js"
 
 export default{
   data() {
