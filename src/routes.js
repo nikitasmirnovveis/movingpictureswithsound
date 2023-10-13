@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 import VueRouter from 'vue-router'
 import Home from './components/Home.vue';
-
+import Movie from './components/Movie.vue';
 
 let router = new VueRouter ({
     mode:'history',
@@ -9,6 +10,11 @@ let router = new VueRouter ({
             path:'/',
             name:'home',
             component:Home,
+        },
+        {
+            path:'/movie/:id',
+            name:'movie',
+            component:Movie,
         }
     ]
 })
