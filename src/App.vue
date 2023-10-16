@@ -5,9 +5,6 @@
       <Searchbar/>
     </div>
     <router-view/>
-    <!-- <Home/>
-    <CardItem/> -->
-    <!-- <VBody><CardItem/></VBody> -->
   </div>
 </template>
 
@@ -17,7 +14,6 @@ import Home from './components/Home.vue';
 import Navbar from "./components/header/Navbar.vue"
 import Searchbar from "./components/header/Searchbar.vue"
 
-import CardItem from './components/CardItem.vue';
 
 export default {
   name: 'App',
@@ -27,7 +23,6 @@ export default {
     Navbar,
     Searchbar,
     // eslint-disable-next-line vue/no-unused-components
-    CardItem
   }
 }
 </script>
