@@ -11,7 +11,6 @@
 <script>
 /* eslint-disable */
 
-
 import PopularMovies from "./PopularMovies.vue"
 import TopRatedMovies from './TopRatedMovies.vue'
   export default {
@@ -31,15 +30,4 @@ import TopRatedMovies from './TopRatedMovies.vue'
 </script>
 
 <style>
-  /* @import "./main.scss" */
-  /* body {
-    background: gray;
-  }
-  .app {
-    background: gray;
-  }
-  h1 {
-    font-size: xx-large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  } */
 </style>
