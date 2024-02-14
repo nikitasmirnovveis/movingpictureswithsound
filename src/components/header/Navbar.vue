@@ -1,8 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="flex gap-5 mt-2 ml-2 mb-2">
-    <img src="@/assets/images/logo.png" alt="" class="h-10"/>
     <ul class="flex gap-5 mt-1">
+      <li>
+        <router-link to="/home">
+          <img src="@/assets/images/logo.png" alt="" class="h-10"/>
+        </router-link>
+      </li>
       <li>
         <router-link to="/popular">
           Popular
